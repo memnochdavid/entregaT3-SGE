@@ -1,3 +1,6 @@
+from random import randint
+
+
 #<FUNCIONES>
 #EJ01
 def x01(lista) ->int:
@@ -78,7 +81,6 @@ def x09(n)->str:
 #EJ10
 def x10(n)->str:
     devuelve = ""
-    espacio=" "
     #parte de arriba
     for i in range(1,n+1):
         for j in range(1,(n+1) - i):
@@ -87,7 +89,6 @@ def x10(n)->str:
             devuelve+="*"
         for j in range(1,i+1):
             devuelve+="*"
-
         devuelve+="\n"
 
     #parte de abajo
@@ -194,6 +195,76 @@ match(ej):
         '''Ejercicio 10. Crea una función que imprima un mosaico rombo de anchura variable. '''
         num = int(input("Número: "))
         print(x10(num))
+
+    case 11:
+        '''Realiza un script para jugar piedra papel tijera contra la maquina: Deberás poder 
+        insertar tu movimiento a través de un input. El primero en ganar 3 gana.'''
+        marcador=[0,0] #jugador/máquina
+        opciones=["piedra", "papel", "tijeras"]
+        continuar=True
+
+        while marcador[0]<3 and marcador[1]<3:
+            maquina=randint(0,2)
+            jug=input("Elige: piedra, papel o tijera: ")
+            jugador=-1
+            match jug:
+                case "piedra":
+                    jugador=0
+                case "papel":
+                    jugador=1
+                case "tijera":
+                    jugador=2
+
+            if maquina == 0 and jugador == 1:
+                marcador[0] += 1 # gana jugador
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Ganaste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            elif maquina == 0 and jugador == 2:
+                marcador[1] += 1 # gana máquina
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Perdiste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            elif maquina==1 and jugador==0:
+                marcador[1]+=1 # gana máquina
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Perdiste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            elif maquina==1 and jugador==2:
+                marcador[0]+= 1 # gana jugador
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Ganaste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            elif maquina==2 and jugador==0:
+                marcador[0] += 1  # gana jugador
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Ganaste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            elif maquina==2 and jugador==1:
+                marcador[1] += 1  # gana máquina
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Perdiste!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+            else:
+                print(f"La máquina eligió: {opciones[maquina]}")
+                print("¡Empate!")
+                print(f"Tus puntos: {marcador[0]}\nPuntos de la máquina: {marcador[1]}")
+
+    case 12:
+        '''El programa generará un número aleatorio entre 1 y 100. El jugador deberá adivinar este 
+        número. Después de cada intento, el programa le dirá al jugador si su número es demasiado alto o demasiado bajo.
+        Al adivinarlo le dirá cuantos intentos necesito.'''
+        intentos=0
+        acierto=False
+        gen_num=randint(1,100)
+        while not acierto:
+            adivina=int(input("Escribe un número: "))
 
 
 
