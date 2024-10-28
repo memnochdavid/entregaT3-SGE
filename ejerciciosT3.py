@@ -1,4 +1,4 @@
-#FUNCIONES
+#<FUNCIONES>
 #EJ01
 def x01(lista) ->int:
     mayor=lista[0]
@@ -33,7 +33,7 @@ def x05(nums)->list:
         if i%2==0:
             devuelve.append(i)
     return devuelve
-#EJ05
+#EJ06
 def x06(n, intervalo)->list:
     encontrados=[]
     i=intervalo[0]
@@ -42,13 +42,66 @@ def x06(n, intervalo)->list:
             encontrados.append(i)
         i+=1
     return encontrados
+#EJ07
+def x07(lados)->bool:
+    lado_mayor=lados[0]
+    for i in lados:
+        if(lado_mayor<i):
+            lado_mayor=i
+            lados.remove(i)
+    if(lados[0]^2+lados[1]^2==lado_mayor^2):
+        return True
+    else:
+        return False
+#EJ08
+def x08(a,b)->int:
+    respuesta=True
+    mcd=0
+    if a<b:
+        for i in range(2,a):
+            if(a%i==0 and b%i==0):
+                mcd=i
+    elif b<a:
+        for i in range(2,b):
+            if(a%i==0 and b%i==0):
+                mcd=i
+    return mcd
+#EJ09
+def x09(n)->str:
+    devuelve=""
+    for i in range(1,n+1):
+        for j in range(0,i):
+            devuelve+=str(i)
+        devuelve+="\n"
+    return devuelve
 
+#EJ10
+def x10(n)->str:
+    devuelve = ""
+    espacio=" "
+    #parte de arriba
+    for i in range(1,n+1):
+        for j in range(1,(n+1) - i):
+            devuelve+=" "
+        for j in range(1,i):
+            devuelve+="*"
+        for j in range(1,i+1):
+            devuelve+="*"
 
+        devuelve+="\n"
 
+    #parte de abajo
+    for i in range(n,0,-1):
+        for j in range(1,(n+1) - i):
+            devuelve+=" "
+        for j in range(1, i):
+            devuelve += "*"
+        for j in range(1, i + 1):
+            devuelve += "*"
 
-
-
-
+        devuelve += "\n"
+    return devuelve
+#</FUNCIONES>
 
 ej=int(input("Ejercicio a probar: "))
 match(ej):
@@ -108,11 +161,39 @@ match(ej):
     case 7:
         '''Ejercicio 7. Crea una función que dada la longitud de los tres lados de un triángulo determine 
         si el triangulo es rectángulo'''
+        a = int(input("Lado A: "))
+        b = int(input("Lado B: "))
+        c = int(input("Lado C: "))
+        lados=[a,b,c]
+        if x07(lados):
+            print("El triángulo es rectángulo.")
+        else:
+            print("El triángulo no es rectángulo.")
 
+    case 8:
+        '''Ejercicio 8. Crea una función que calcule el máximo común divisor de dos números
+        naturales'''
+        a = int(input("Número A: "))
+        b = int(input("Número B: "))
+        print(f"El MCD de {a} y {b} es: {x08(a,b)}")
 
+    case 9:
+        '''Ejercicio 9. Crea una función que dado un número n imprima los siguientes
+        ‘mosaicos’:
+        Por ejemplo para n = 6:
+        1
+        22
+        333
+        4444
+        55555
+        666666  '''
+        num = int(input("Número: "))
+        print(x09(num))
 
-
-
+    case 10:
+        '''Ejercicio 10. Crea una función que imprima un mosaico rombo de anchura variable. '''
+        num = int(input("Número: "))
+        print(x10(num))
 
 
 
