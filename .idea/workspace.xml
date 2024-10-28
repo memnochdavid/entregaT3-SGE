@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4261c3cd-2fd7-4a20-9bf3-aba5867d6e95" name="Changes" comment="haciendo ejercicios">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4261c3cd-2fd7-4a20-9bf3-aba5867d6e95" name="Changes" comment="haciendo los extras!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejerciciosT3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciosT3.py" afterDir="false" />
     </list>
@@ -106,11 +105,20 @@
       <option name="project" value="LOCAL" />
       <updated>1729776250793</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="haciendo los extras!!">
+      <option name="closed" value="true" />
+      <created>1730128752768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730128752768</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haciendo ejercicios" />
-    <option name="LAST_COMMIT_MESSAGE" value="haciendo ejercicios" />
+    <MESSAGE value="haciendo los extras!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="haciendo los extras!!" />
   </component>
 </project>

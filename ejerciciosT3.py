@@ -263,9 +263,18 @@ match(ej):
         intentos=0
         acierto=False
         gen_num=randint(1,100)
+        adivina=int(input("Escribe un número: "))
         while not acierto:
-            adivina=int(input("Escribe un número: "))
-
+            if adivina<gen_num:
+                adivina=int(input("No has llegado: "))
+                intentos+=1
+            elif adivina>gen_num:
+                adivina = int(input("Te has pasado: "))
+                intentos += 1
+            elif adivina==gen_num:
+                print("¡HAS ACERTADO!")
+                print(f"Te ha llevado {intentos} intentos.")
+                acierto=True
 
 
 
