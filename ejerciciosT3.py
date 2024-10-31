@@ -49,10 +49,10 @@ def x06(n, intervalo)->list:
 def x07(lados)->bool:
     lado_mayor=lados[0]
     for i in lados:
-        if(lado_mayor<i):
+        if lado_mayor<i:
             lado_mayor=i
             lados.remove(i)
-    if(lados[0]^2+lados[1]^2==lado_mayor^2):
+    if lados[0]^2+lados[1]^2==lado_mayor^2:
         return True
     else:
         return False
@@ -61,11 +61,11 @@ def x08(a,b)->int:
     respuesta=True
     mcd=0
     if a<b:
-        for i in range(2,a):
+        for i in range(2,b):
             if(a%i==0 and b%i==0):
                 mcd=i
     elif b<a:
-        for i in range(2,b):
+        for i in range(2,a):
             if(a%i==0 and b%i==0):
                 mcd=i
     return mcd
